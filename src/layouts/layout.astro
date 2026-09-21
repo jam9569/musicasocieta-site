@@ -24,27 +24,47 @@ const {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Lexend:wght@300;400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Lexend:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <style is:global>
       :root {
-        --color-ink: #14171a;
-        --color-paper: #fdfbf7;
-        --color-accent: #1f6f5c;
+        --tea: #3d9463;
+        --tea-dark: #2b6e49;
+        --tea-tint: #e9f3ed;
+        --yellow: #faf1df;
+        --ink: #1a1a1a;
+        --gray: #6b6b6b;
+        --gray-light: #f4f3f0;
+        --paper: #ffffff;
+        --border: #e6e3db;
       }
       * {
         box-sizing: border-box;
       }
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         margin: 0;
-        font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
-        color: var(--color-ink);
-        background: var(--color-paper);
-        line-height: 1.5;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: 'Lexend', sans-serif;
+        font-weight: 300;
+        line-height: 1.55;
+      }
+      h1,
+      h2,
+      h3,
+      .headline {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        margin: 0;
       }
       a {
-        color: var(--color-accent);
+        text-decoration: none;
+        color: inherit;
       }
     </style>
   </head>
