@@ -40,10 +40,12 @@ const newsHome = newsEntries
   <div class="tagrow">
     <div class="tagrow-inner">
       <div class="lead">Una rete per chi insegna musica.</div>
-      <div class="tag">Scuole</div>
-      <div class="tag">Docenti</div>
-      <div class="tag">Progetti</div>
-      <div class="tag">Bandi</div>
+      <div class="tags">
+        <div class="tag">Scuole</div>
+        <div class="tag">Docenti</div>
+        <div class="tag">Progetti</div>
+        <div class="tag">Bandi</div>
+      </div>
     </div>
   </div>
 
@@ -198,13 +200,12 @@ const newsHome = newsEntries
   @media (max-width: 600px) {
     .hero {
       height: auto;
-      min-height: 480px;
-      padding: 48px 24px;
+      min-height: 0;
+      padding: 220px 24px 44px;
       background:
-        linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
-        linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0) 22%, rgba(255,255,255,0) 62%, #ffffff 100%),
-        radial-gradient(ellipse 95% 90% at 50% 40%, rgba(255,255,255,0.99) 0%, rgba(255,255,255,0.95) 35%, rgba(255,255,255,0.8) 60%, rgba(255,255,255,0.5) 80%, rgba(255,255,255,0.3) 96%),
-        url('/assets/hero-orchestra.jpg') center top / cover no-repeat;
+        linear-gradient(rgba(255,255,255,0.12), rgba(255,255,255,0.12)),
+        url('/assets/hero-orchestra.jpg') center top / contain no-repeat;
+      background-color: #ffffff;
     }
   }
 
@@ -219,7 +220,12 @@ const newsHome = newsEntries
     font-family: 'Poppins', sans-serif;
   }
   .tagrow-inner .lead { font-family: 'Lexend', sans-serif; font-weight: 300; color: var(--gray); font-size: 0.92rem; }
+  .tagrow-inner .tags { display: contents; }
   .tagrow-inner .tag { font-weight: 600; font-size: 0.95rem; color: var(--ink); }
+  @media (max-width: 760px) {
+    .tagrow-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .tagrow-inner .tags { display: flex; flex-wrap: wrap; gap: 14px 28px; }
+  }
 
   /* visione / quote section */
   section.visione { padding: 90px 32px; background: var(--tea-tint); }
