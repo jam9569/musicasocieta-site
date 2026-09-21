@@ -1,0 +1,44 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = 'MusicaSocieta APS - la rete che unisce le scuole di musica.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <style is:global>
+      :root {
+        --color-ink: #14171a;
+        --color-paper: #fdfbf7;
+        --color-accent: #1f6f5c;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+        color: var(--color-ink);
+        background: var(--color-paper);
+        line-height: 1.5;
+      }
+      a {
+        color: var(--color-accent);
+      }
+    </style>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
