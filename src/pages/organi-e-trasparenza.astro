@@ -72,19 +72,30 @@ const direttivo = [
     </div>
   </section>
 
-  <section class="credits-section">
+  <section class="teams-section">
     <div class="wrap">
       <div class="section-head">
-        <div class="eyebrow">Team formazione</div>
+        <div class="eyebrow">Team dell'associazione</div>
+        <h2>Chi cura la formazione e i progetti</h2>
       </div>
-      <p class="credits-text">Maria Paola Busconi, Mariagrazia Vincitorio e Giovanni Curti.</p>
+      <div class="teams-grid">
+        <div class="team-card">
+          <div class="eyebrow">Team Formazione</div>
+          <p class="team-names">Maria Paola Busconi, Mariagrazia Vincitorio, Giovanni Curti.</p>
+        </div>
+        <div class="team-card">
+          <div class="eyebrow">Team Progettazione</div>
+          <p class="team-role">Progettazione e partecipazione a bandi pubblici e privati.</p>
+          <p class="team-names">Giovanni Curti.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="credits-section credits-section--tight">
+  <section class="credits-section">
     <div class="wrap">
       <div class="section-head">
-        <div class="eyebrow">Team progettisti</div>
+        <div class="eyebrow">Realizzazione del sito</div>
       </div>
       <p class="credits-text">Il sito è stato ideato e sviluppato da Marco Badini. Il sito appartiene a MusicaSocietà APS.</p>
     </div>
@@ -128,11 +139,22 @@ const direttivo = [
   .statuto-card h3 { font-size: 1.35rem; margin-bottom: 10px; }
   .statuto-card p { margin-bottom: 22px; }
 
+  section.teams-section { padding: 20px 32px 70px; }
+  .teams-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  }
+  .team-card {
+    border: 1px solid var(--border); border-radius: 24px; padding: 32px 30px; background: var(--paper);
+  }
+  .team-card .eyebrow { margin-bottom: 14px; }
+  .team-card .team-role { color: var(--gray); font-size: 0.9rem; margin: 0 0 10px; }
+  .team-card .team-names { font-size: 1rem; color: var(--ink); margin: 0; }
+
   .credits-text { font-size: 1rem; color: var(--ink); }
-  .credits-section--tight { padding-top: 0; }
 
   @media (max-width: 760px) {
     .data-grid { grid-template-columns: 1fr; }
     .direttivo-row { flex-direction: column; gap: 2px; }
+    .teams-grid { grid-template-columns: 1fr; }
   }
 </style>
