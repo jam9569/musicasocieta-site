@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Chi Siamo — MusicaSocietà APS" description="MusicaSocietà APS: chi siamo, come siamo nati e qual è il nostro scopo.">
+  <Header />
+
+  <section class="page-hero">
+    <div class="eyebrow"><span class="dot"></span> Chi siamo</div>
+    <h1>Una rete nata per far crescere<br>chi insegna musica.</h1>
+    <p class="sub">MusicaSocietà APS è l'associazione di secondo livello che unisce scuole di musica e realtà culturali, per condividere risorse, competenze e progetti.</p>
+  </section>
+
+  <section class="story-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Come siamo nati</div>
+        <h2>Quattro scuole, un'unica rete.</h2>
+      </div>
+      <p class="story-text">MusicaSocietà APS è stata costituita il 14 febbraio 2026 a Bologna da quattro enti fondatori: Jam Session APS, Eco della Valle - Piacenza BIMBI IN MUSICA APS, Mondo Musica ETS e Audioline Music Village APS. Scuole diverse per storia e territorio, unite dall'idea che fare rete porti vantaggi reali a tutti.</p>
+      <a href="/scuole-aderenti/" class="link-arrow">Scopri le scuole aderenti →</a>
+    </div>
+  </section>
+
+  <section class="purpose-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Il nostro scopo</div>
+        <h2>Coordinamento e servizio per le scuole di musica.</h2>
+        <p class="section-sub">Come previsto dallo Statuto, l'Associazione non ha scopo di lucro e opera prevalentemente come organismo di coordinamento, supporto e servizio per le scuole di musica e gli enti associati.</p>
+      </div>
+      <div class="purpose-grid">
+        <div class="purpose-card">
+          <h3>Educazione e formazione musicale</h3>
+          <p>Attività di istruzione e formazione professionale, culturali ed educative legate alla musica.</p>
+        </div>
+        <div class="purpose-card">
+          <h3>Contrasto alla dispersione scolastica</h3>
+          <p>Formazione extrascolastica per il successo formativo e la prevenzione del bullismo.</p>
+        </div>
+        <div class="purpose-card">
+          <h3>Ricerca e innovazione didattica</h3>
+          <p>Sperimentazione e diffusione di pratiche educative musicali, anche con tecnologie digitali e intelligenza artificiale.</p>
+        </div>
+        <div class="purpose-card">
+          <h3>Cultura e cittadinanza attiva</h3>
+          <p>Attività culturali e artistiche che promuovono legalità, responsabilità civile e partecipazione.</p>
+        </div>
+        <div class="purpose-card">
+          <h3>Inclusione e pari opportunità</h3>
+          <p>Iniziative che favoriscono l'accesso alla pratica musicale e valorizzano le diversità.</p>
+        </div>
+        <div class="purpose-card">
+          <h3>Servizi alle scuole associate</h3>
+          <p>Supporto, convenzioni e servizi strumentali pensati per le esigenze delle scuole di musica.</p>
+        </div>
+      </div>
+      <a href="/organi-e-trasparenza/" class="link-arrow purpose-more">Statuto, organi e trasparenza →</a>
+    </div>
+  </section>
+
+  <section class="join-cta">
+    <div class="wrap join-inner">
+      <div>
+        <h2>Vuoi conoscerci meglio?</h2>
+        <p>Raccontaci la tua scuola: ti spieghiamo come funziona la rete e come aderire.</p>
+      </div>
+      <a href="/#cta" class="btn btn-primary">Scrivici</a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  section.story-section,
+  section.purpose-section { padding: 20px 32px 70px; }
+  .section-head { max-width: 640px; margin: 0 0 28px; }
+  .section-head .eyebrow { color: var(--gray); }
+  .section-head h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.15; }
+  .section-sub { color: var(--gray); font-size: 0.94rem; margin: 12px 0 0; max-width: 68ch; }
+
+  .story-text { max-width: 68ch; color: var(--ink); font-size: 1rem; line-height: 1.6; margin: 0 0 16px; }
+
+  .purpose-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;
+    margin-top: 8px;
+  }
+  .purpose-card {
+    border-radius: 20px; padding: 26px 24px; background: var(--gray-light);
+  }
+  .purpose-card h3 { font-size: 1.02rem; line-height: 1.25; margin-bottom: 8px; }
+  .purpose-card p { color: var(--gray); font-size: 0.88rem; margin: 0; }
+
+  .purpose-more { display: inline-block; margin-top: 30px; }
+
+  section.join-cta { padding: 20px 32px 100px; }
+  .join-inner {
+    background: var(--tea-tint); border-radius: 28px; padding: 44px 48px;
+    display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap;
+  }
+  .join-inner h2 { font-size: 1.5rem; margin-bottom: 8px; }
+  .join-inner p { color: var(--gray); margin: 0; }
+
+  @media (max-width: 900px) {
+    .purpose-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 760px) {
+    .purpose-grid { grid-template-columns: 1fr; }
+    .join-inner { text-align: center; justify-content: center; }
+  }
+</style>
