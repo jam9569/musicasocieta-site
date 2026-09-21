@@ -1,0 +1,128 @@
+---
+import Layout from '../layouts/layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const direttivo = [
+  { carica: 'Presidente', nome: 'Mariagrazia Vincitorio' },
+  { carica: 'Vice-Presidente', nome: 'Daniela Peraino' },
+  { carica: 'Segretario', nome: 'Maria Paola Busconi' },
+  { carica: 'Tesoriere', nome: 'Marco Badini' },
+  { carica: 'Consigliere', nome: 'Andrea Belvederi Mosti' },
+  { carica: 'Consigliere', nome: 'Graziano Benvenuto Beluffi' },
+  { carica: 'Consigliere', nome: 'Franco Cacciari' },
+  { carica: 'Consigliere', nome: 'Mariacarla Rettanni' },
+  { carica: 'Consigliere', nome: 'Monica Rossetti' },
+];
+---
+
+<Layout title="Organi e Trasparenza — MusicaSocietà APS" description="Dati costitutivi, organi sociali e statuto di MusicaSocietà APS.">
+  <Header />
+
+  <section class="page-hero">
+    <div class="eyebrow"><span class="dot"></span> Trasparenza</div>
+    <h1>Organi e trasparenza</h1>
+    <p class="sub">Chi siamo, come siamo organizzati e i documenti che regolano l'associazione.</p>
+  </section>
+
+  <section class="data-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Dati identificativi</div>
+        <h2>MusicaSocietà APS</h2>
+      </div>
+      <dl class="data-grid">
+        <div><dt>Costituita il</dt><dd>14 febbraio 2026, a Bologna</dd></div>
+        <div><dt>Sede legale</dt><dd>Via del Perugino 6C, 40139 Bologna (BO)</dd></div>
+        <div><dt>Codice Fiscale</dt><dd>91477770373</dd></div>
+        <div><dt>Numero Repertorio</dt><dd>174628</dd></div>
+        <div><dt>Iscrizione RUNTS</dt><dd>Sezione B) Associazioni di Promozione Sociale — Regione Emilia-Romagna, determinazione dirigenziale n. 13013 del 01/07/2026</dd></div>
+        <div><dt>Statuto registrato</dt><dd>Agenzia delle Entrate, Ufficio Territoriale di Bologna 2, atto n. 689 del 23/06/2026 (sottoscritto il 5 giugno 2026)</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="direttivo-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Organi sociali</div>
+        <h2>Consiglio Direttivo</h2>
+        <p class="section-sub">Primo mandato, durata 4 anni, nominato ai sensi dell'art. 8 dello Statuto.</p>
+      </div>
+      <div class="direttivo-table">
+        {direttivo.map((m) => (
+          <div class="direttivo-row">
+            <span class="carica">{m.carica}</span>
+            <span class="nome">{m.nome}</span>
+          </div>
+        ))}
+      </div>
+      <p class="other-organs">Altri organi previsti dallo Statuto (art. 6): l'Assemblea degli associati, il Presidente, l'Organo di controllo (se nominato) e il Revisore legale dei conti (se nominato).</p>
+    </div>
+  </section>
+
+  <section class="statuto-section">
+    <div class="wrap">
+      <div class="statuto-card card card-tea">
+        <div class="eyebrow">Statuto</div>
+        <h3>Lo statuto di MusicaSocietà APS</h3>
+        <p>Testo integrale dei 19 articoli, in versione solo testo (senza scansione, timbri o firme).</p>
+        <a href="/statuto-musicasocieta-aps.pdf" class="btn btn-primary" download>Scarica lo Statuto (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="credits-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Team progettisti</div>
+      </div>
+      <p class="credits-text">Il sito è stato ideato e sviluppato da Marco Badini e Giovanni Curti.</p>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  section.data-section,
+  section.direttivo-section,
+  section.credits-section { padding: 20px 32px 70px; }
+  .section-head { max-width: 640px; margin: 0 0 32px; }
+  .section-head .eyebrow { color: var(--gray); }
+  .section-head h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.15; }
+  .section-sub { color: var(--gray); font-size: 0.94rem; margin: 10px 0 0; }
+
+  .data-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px 40px;
+    margin: 0; padding: 0;
+  }
+  .data-grid dt {
+    font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.78rem;
+    letter-spacing: 0.04em; text-transform: uppercase; color: var(--tea-dark); margin-bottom: 6px;
+  }
+  .data-grid dd { margin: 0; color: var(--ink); font-size: 0.96rem; line-height: 1.5; }
+
+  .direttivo-table {
+    border-top: 1px solid var(--border);
+  }
+  .direttivo-row {
+    display: flex; justify-content: space-between; gap: 20px;
+    padding: 14px 0; border-bottom: 1px solid var(--border);
+  }
+  .direttivo-row .carica { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.9rem; color: var(--gray); }
+  .direttivo-row .nome { font-size: 0.96rem; color: var(--ink); }
+  .other-organs { margin: 22px 0 0; color: var(--gray); font-size: 0.88rem; max-width: 60ch; }
+
+  section.statuto-section { padding: 0 32px 70px; }
+  .statuto-card { max-width: 640px; }
+  .statuto-card h3 { font-size: 1.35rem; margin-bottom: 10px; }
+  .statuto-card p { margin-bottom: 22px; }
+
+  .credits-text { font-size: 1rem; color: var(--ink); }
+
+  @media (max-width: 760px) {
+    .data-grid { grid-template-columns: 1fr; }
+    .direttivo-row { flex-direction: column; gap: 2px; }
+  }
+</style>

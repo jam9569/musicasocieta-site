@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const scuole = [
+  { nome: 'Jam Session APS', citta: 'Bologna', rappresentante: 'Marco Badini' },
+  { nome: 'Eco della Valle - Piacenza BIMBI IN MUSICA APS', citta: 'Piacenza', rappresentante: 'Graziano Benvenuto Beluffi' },
+  { nome: 'Mondo Musica ETS', citta: 'Parma', rappresentante: 'Daniela Peraino' },
+  { nome: 'Audioline Music Village APS', citta: 'Bologna / Grizzana Morandi', rappresentante: 'Franco Cacciari' },
+];
+---
+
+<Layout title="Scuole Aderenti — MusicaSocietà APS" description="Le scuole e associazioni fondatrici della rete MusicaSocietà APS.">
+  <Header />
+
+  <section class="page-hero">
+    <div class="eyebrow"><span class="dot"></span> La rete</div>
+    <h1>Scuole aderenti</h1>
+    <p class="sub">Le scuole e associazioni che hanno fondato MusicaSocietà APS il 14 febbraio 2026, a Bologna.</p>
+  </section>
+
+  <section class="schools">
+    <div class="wrap">
+      <div class="schools-grid">
+        {scuole.map((s) => (
+          <div class="school-card">
+            <div class="eyebrow">Ente fondatore</div>
+            <h3>{s.nome}</h3>
+            <p class="meta">{s.citta}</p>
+            <p class="rep">Rappresentante: {s.rappresentante}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="join-cta">
+    <div class="wrap join-inner">
+      <div>
+        <h2>La tua scuola vuole entrare nella rete?</h2>
+        <p>Ti raccontiamo come funziona l'adesione e cosa prevede lo statuto.</p>
+      </div>
+      <a href="/#cta" class="btn btn-primary">Scrivici</a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  section.schools { padding: 10px 32px 90px; }
+  .schools-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  }
+  .school-card {
+    border: 1px solid var(--border); border-radius: 24px; padding: 34px 32px; background: var(--paper);
+  }
+  .school-card .eyebrow { margin-bottom: 12px; }
+  .school-card h3 { font-size: 1.25rem; line-height: 1.2; margin-bottom: 12px; }
+  .school-card .meta { color: var(--tea-dark); font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.88rem; margin: 0 0 4px; }
+  .school-card .rep { color: var(--gray); font-size: 0.9rem; margin: 0; }
+
+  section.join-cta { padding: 60px 32px 100px; }
+  .join-inner {
+    background: var(--tea-tint); border-radius: 28px; padding: 44px 48px;
+    display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap;
+  }
+  .join-inner h2 { font-size: 1.5rem; margin-bottom: 8px; }
+  .join-inner p { color: var(--gray); margin: 0; }
+
+  @media (max-width: 760px) {
+    .schools-grid { grid-template-columns: 1fr; }
+    .join-inner { text-align: center; justify-content: center; }
+  }
+</style>

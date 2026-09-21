@@ -1,31 +1,11 @@
 ---
 import Layout from '../layouts/layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="MusicaSocietà APS">
-  <header>
-    <div class="headerbar">
-      <div class="brand">
-        <svg viewBox="53 53 94 94" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="100" cy="100" r="40" fill="#3d9463"></circle>
-          <circle cx="71.72" cy="71.72" r="17" fill="#d9a441" fill-opacity="0.62"></circle>
-          <circle cx="128.28" cy="71.72" r="17" fill="#b23a2f" fill-opacity="0.62"></circle>
-          <circle cx="71.72" cy="128.28" r="17" fill="#4f7ea1" fill-opacity="0.62"></circle>
-          <circle cx="128.28" cy="128.28" r="17" fill="#6b5b4d" fill-opacity="0.62"></circle>
-          <text x="100" y="110" text-anchor="middle" font-size="26" fill="#ffffff"><tspan font-family="Poppins, sans-serif" font-weight="700">M</tspan><tspan font-family="Lexend, sans-serif" font-weight="300">S</tspan></text>
-        </svg>
-        <div class="wordtxt">Musica<span>Società</span></div>
-      </div>
-      <nav>
-        <a href="#">Chi siamo</a>
-        <a href="#">Vantaggi per i soci</a>
-        <a href="#">Progetti e bandi</a>
-        <a href="#">Scuole aderenti</a>
-        <a href="#cta">Contatti</a>
-      </nav>
-      <a href="#cta" class="btn btn-primary">Diventa socio</a>
-    </div>
-  </header>
+  <Header />
 
   <section class="hero">
     <div class="eyebrow"><span class="dot"></span> Rete di scuole di musica</div>
@@ -63,17 +43,17 @@ import Layout from '../layouts/layout.astro';
         <h2>Fare rete conviene. Davvero.</h2>
       </div>
       <div class="cards2">
-        <div class="card card-tea">
+        <div class="card card-tea" id="vantaggi">
           <div class="eyebrow">Vantaggi per i soci</div>
           <h3>Le dimensioni portano vantaggi reali.</h3>
           <p>Convenzioni, servizi condivisi e occasioni di formazione pensate per le scuole associate.</p>
-          <a href="#" class="link-arrow">Scopri i vantaggi →</a>
+          <a href="#cta" class="link-arrow">Scopri i vantaggi →</a>
         </div>
-        <div class="card card-yellow">
+        <div class="card card-yellow" id="progetti-bandi">
           <div class="eyebrow">Progetti e bandi</div>
           <h3>Insieme si arriva più lontano.</h3>
           <p>Bandi regionali, nazionali ed europei: la rete lavora anche per far crescere le opportunità di ogni scuola.</p>
-          <a href="#" class="link-arrow">Scopri i progetti →</a>
+          <a href="#cta" class="link-arrow">Scopri i progetti →</a>
         </div>
       </div>
     </div>
@@ -127,74 +107,16 @@ import Layout from '../layouts/layout.astro';
     </div>
   </section>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <svg viewBox="53 53 94 94" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="100" cy="100" r="40" fill="#3d9463"></circle>
-          <circle cx="71.72" cy="71.72" r="17" fill="#d9a441" fill-opacity="0.62"></circle>
-          <circle cx="128.28" cy="71.72" r="17" fill="#b23a2f" fill-opacity="0.62"></circle>
-          <circle cx="71.72" cy="128.28" r="17" fill="#4f7ea1" fill-opacity="0.62"></circle>
-          <circle cx="128.28" cy="128.28" r="17" fill="#6b5b4d" fill-opacity="0.62"></circle>
-          <text x="100" y="110" text-anchor="middle" font-size="26" fill="#ffffff"><tspan font-family="Poppins, sans-serif" font-weight="700">M</tspan><tspan font-family="Lexend, sans-serif" font-weight="300">S</tspan></text>
-        </svg>
-        <div class="txt">MusicaSocietà APS</div>
-      </div>
-      <div class="footer-tag">La rete tra le scuole di musica.</div>
-    </div>
-    <div class="footer-note">© 2026 MusicaSocietà APS — Sito in costruzione</div>
-  </footer>
+  <Footer />
 </Layout>
 
 <style>
-  a { text-decoration: none; }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
-
-  /* header */
-  header {
-    position: sticky; top: 0; z-index: 10;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid var(--border);
-  }
-  .headerbar {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 14px 32px;
-    max-width: 1120px; margin: 0 auto;
-  }
-  .brand { display: flex; align-items: center; gap: 10px; }
-  .brand svg { width: 36px; height: 36px; display: block; }
-  .brand .wordtxt {
-    font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--ink);
-  }
-  .brand .wordtxt span { color: var(--tea); }
-  nav { display: flex; align-items: center; gap: 28px; }
-  nav a {
-    font-family: 'Lexend', sans-serif; font-weight: 400; font-size: 0.92rem; color: var(--ink); opacity: 0.75;
-  }
-  nav a:hover { opacity: 1; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.88rem;
-    padding: 11px 22px; border-radius: 999px;
-    border: none; cursor: pointer;
-  }
-  .btn-primary { background: var(--yellow); color: var(--ink); }
-  .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--border); }
-
   /* hero */
   .hero {
     text-align: center;
     padding: 110px 32px 90px;
     background: linear-gradient(180deg, #fbfaf7 0%, #ffffff 100%);
   }
-  .eyebrow {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.78rem;
-    letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray);
-    margin-bottom: 22px;
-  }
-  .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--tea); }
   .hero h1 {
     font-size: clamp(2.4rem, 5.6vw, 4.1rem);
     line-height: 1.05;
@@ -210,10 +132,6 @@ import Layout from '../layouts/layout.astro';
     margin-top: 36px; display: flex; align-items: center; justify-content: center; gap: 22px; flex-wrap: wrap;
   }
   .hero-ctas .btn-primary { padding: 14px 28px; font-size: 0.95rem; }
-  .link-arrow {
-    font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.92rem; color: var(--ink);
-    display: inline-flex; align-items: center; gap: 6px;
-  }
   .hero-fineprint {
     margin-top: 20px; font-size: 0.8rem; color: var(--gray); opacity: 0.8;
   }
@@ -262,18 +180,6 @@ import Layout from '../layouts/layout.astro';
   .cards2 {
     display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
   }
-  .card {
-    border-radius: 24px; padding: 38px 34px 34px;
-  }
-  .card.card-tea { background: var(--tea-tint); }
-  .card.card-yellow { background: var(--yellow); }
-  .card .eyebrow {
-    font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.72rem;
-    letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray); margin-bottom: 14px;
-  }
-  .card h3 { font-size: 1.5rem; line-height: 1.15; margin-bottom: 14px; }
-  .card p { color: var(--gray); font-size: 0.96rem; margin: 0 0 18px; }
-  .card .link-arrow { color: var(--tea-dark); font-size: 0.88rem; }
 
   /* numbered steps */
   section.steps { padding: 90px 32px; background: var(--gray-light); }
@@ -318,20 +224,7 @@ import Layout from '../layouts/layout.astro';
   }
   .form-card button.btn-primary { width: 100%; justify-content: center; padding: 13px; }
 
-  /* footer */
-  footer { border-top: 1px solid var(--border); padding: 46px 32px; background: var(--gray-light); }
-  .footer-inner {
-    max-width: 1120px; margin: 0 auto;
-    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
-  }
-  .footer-brand { display: flex; align-items: center; gap: 10px; }
-  .footer-brand svg { width: 28px; height: 28px; }
-  .footer-brand .txt { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.95rem; }
-  .footer-tag { color: var(--gray); font-size: 0.85rem; }
-  .footer-note { width: 100%; margin-top: 24px; font-size: 0.78rem; color: var(--gray); opacity: 0.75; text-align: center; }
-
   @media (max-width: 760px) {
-    nav { display: none; }
     .cards2, .steps-inner, .cta-inner { grid-template-columns: 1fr; }
   }
 </style>
