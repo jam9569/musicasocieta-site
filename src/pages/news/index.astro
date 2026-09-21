@@ -1,0 +1,134 @@
+---
+import Layout from '../../layouts/layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+function annoSociale(d) {
+  const y = d.getFullYear();
+  return d.getMonth() >= 8 ? `${y}/${y + 1}` : `${y - 1}/${y}`;
+}
+
+const oggiStr = new Date().toISOString().slice(0, 10);
+const newsEntries = await getCollection('news');
+
+function mapNews(n) {
+  const d = new Date(n.data.date);
+  return {
+    slug: n.id,
+    title: n.data.title,
+    dateDisplay: d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }),
+    annoSociale: annoSociale(d),
+  };
+}
+
+const prossime = newsEntries
+  .filter(n => n.data.date >= oggiStr)
+  .sort((a, b) => (a.data.date > b.data.date ? 1 : -1))
+  .map(mapNews);
+
+const archivio = newsEntries
+  .filter(n => n.data.date < oggiStr)
+  .sort((a, b) => (a.data.date < b.data.date ? 1 : -1))
+  .map(mapNews);
+
+const ANNI_SOCIALI = [...new Set(archivio.map(n => n.annoSociale))].sort((a, b) => b.localeCompare(a));
+---
+
+<Layout title="News — MusicaSocietà APS" description="Novità, appuntamenti e archivio delle news di MusicaSocietà APS.">
+  <Header />
+
+  <section class="page-hero">
+    <div class="eyebrow"><span class="dot"></span> News</div>
+    <h1>Novità dalla rete.</h1>
+    <p class="sub">Aggiornamenti sulla rete, i progetti e le scuole aderenti. Qui anche l'archivio delle news passate.</p>
+  </section>
+
+  <section class="news-list-section">
+    <div class="wrap">
+      {prossime.length > 0 && (
+        <div class="news-block">
+          <div class="section-head"><h2>Prossimamente</h2></div>
+          <div class="news-grid">
+            {prossime.map(n => (
+              <a class="news-card" href={`/news/${n.slug}/`}>
+                <span class="news-date">{n.dateDisplay}</span>
+                <span class="news-title">{n.title}</span>
+                <span class="link-arrow">Leggi i dettagli →</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {archivio.length > 0 && (
+        <div class="news-block">
+          <div class="section-head"><h2>Archivio</h2></div>
+          {ANNI_SOCIALI.length > 1 && (
+            <div class="news-filters" role="group" aria-label="Filtra l'archivio per anno sociale">
+              <button type="button" class="filter-btn is-active" data-year="all">Tutti</button>
+              {ANNI_SOCIALI.map(y => (
+                <button type="button" class="filter-btn" data-year={y}>{y}</button>
+              ))}
+            </div>
+          )}
+          <div class="news-grid" id="news-grid">
+            {archivio.map(n => (
+              <a class="news-card" href={`/news/${n.slug}/`} data-year={n.annoSociale}>
+                <span class="news-date">{n.dateDisplay}</span>
+                <span class="news-title">{n.title}</span>
+                <span class="link-arrow">Leggi i dettagli →</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {prossime.length === 0 && archivio.length === 0 && (
+        <div class="empty-state"><p>Non ci sono ancora news pubblicate.</p></div>
+      )}
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<script>
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('#news-grid .news-card');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const year = btn.dataset.year;
+      buttons.forEach(b => b.classList.toggle('is-active', b === btn));
+      cards.forEach(card => {
+        const show = year === 'all' || card.dataset.year === year;
+        card.hidden = !show;
+      });
+    });
+  });
+</script>
+
+<style>
+  section.news-list-section { padding: 10px 32px 100px; }
+  .news-block { margin-bottom: 56px; }
+  .news-block:last-child { margin-bottom: 0; }
+  .section-head { margin-bottom: 22px; }
+  .section-head h2 { font-size: 1.4rem; }
+  .news-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
+  .filter-btn {
+    font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.82rem;
+    padding: 8px 16px; border-radius: 999px; border: 1px solid var(--border);
+    background: var(--paper); color: var(--ink); cursor: pointer;
+  }
+  .filter-btn.is-active { background: var(--tea-dark); border-color: var(--tea-dark); color: #fff; }
+  .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .news-card { display: block; background: var(--gray-light); border-radius: 20px; padding: 26px 24px; }
+  .news-card[hidden] { display: none; }
+  .news-date { display: block; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tea-dark); margin-bottom: 10px; }
+  .news-title { display: block; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.02rem; line-height: 1.3; color: var(--ink); margin-bottom: 12px; }
+  .news-card .link-arrow { color: var(--tea-dark); font-size: 0.85rem; }
+  .empty-state { background: var(--gray-light); border-radius: 24px; padding: 56px 32px; text-align: center; }
+  .empty-state p { color: var(--gray); font-size: 1rem; margin: 0; }
+  @media (max-width: 900px) { .news-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) { .news-grid { grid-template-columns: 1fr; } }
+</style>
