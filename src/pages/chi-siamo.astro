@@ -9,7 +9,7 @@ import Footer from '../components/Footer.astro';
 
   <section class="page-hero">
     <div class="eyebrow"><span class="dot"></span> Chi siamo</div>
-    <h1>Una rete nata per far crescere<br>chi insegna musica.</h1>
+    <h1>Una rete nata<br>per far crescere<br>chi insegna musica.</h1>
     <p class="sub">MusicaSocietà APS è l'associazione di secondo livello che unisce scuole di musica e realtà culturali, per condividere risorse, competenze e progetti.</p>
   </section>
 
@@ -34,7 +34,11 @@ import Footer from '../components/Footer.astro';
       <div class="purpose-grid">
         <div class="purpose-card">
           <h3>Educazione e formazione musicale</h3>
-          <p>Attività di istruzione e formazione professionale, culturali ed educative legate alla musica.</p>
+          <p>Attività di istruzione e formazione professionale, culturali ed educative legate alla musica, compresa la formazione dei docenti per diffondere le buone pratiche tra le scuole della rete.</p>
+        </div>
+        <div class="purpose-card">
+          <h3>Servizi alle scuole associate</h3>
+          <p>Supporto, convenzioni e servizi strumentali pensati per le esigenze delle scuole di musica.</p>
         </div>
         <div class="purpose-card">
           <h3>Contrasto alla dispersione scolastica</h3>
@@ -51,10 +55,6 @@ import Footer from '../components/Footer.astro';
         <div class="purpose-card">
           <h3>Inclusione e pari opportunità</h3>
           <p>Iniziative che favoriscono l'accesso alla pratica musicale e valorizzano le diversità.</p>
-        </div>
-        <div class="purpose-card">
-          <h3>Servizi alle scuole associate</h3>
-          <p>Supporto, convenzioni e servizi strumentali pensati per le esigenze delle scuole di musica.</p>
         </div>
       </div>
       <a href="/organi-e-trasparenza/" class="link-arrow purpose-more">Statuto, organi e trasparenza →</a>
@@ -77,12 +77,12 @@ import Footer from '../components/Footer.astro';
 <style>
   section.story-section,
   section.purpose-section { padding: 20px 32px 70px; }
-  .section-head { max-width: 640px; margin: 0 0 28px; }
+  .section-head { max-width: 820px; margin: 0 0 28px; }
   .section-head .eyebrow { color: var(--gray); }
   .section-head h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.15; }
-  .section-sub { color: var(--gray); font-size: 0.94rem; margin: 12px 0 0; max-width: 68ch; }
+  .section-sub { color: var(--gray); font-size: 0.94rem; margin: 12px 0 0; }
 
-  .story-text { max-width: 68ch; color: var(--ink); font-size: 1rem; line-height: 1.6; margin: 0 0 16px; }
+  .story-text { max-width: 820px; color: var(--ink); font-size: 1rem; line-height: 1.6; margin: 0 0 16px; }
 
   .purpose-grid {
     display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;
