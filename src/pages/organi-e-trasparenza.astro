@@ -79,14 +79,14 @@ const direttivo = [
         <h2>Chi cura la formazione e i progetti</h2>
       </div>
       <div class="teams-grid">
-        <div class="team-card">
+        <div class="team-card team-card-tea">
           <div class="eyebrow">Team Formazione</div>
           <p class="team-names">Maria Paola Busconi, Mariagrazia Vincitorio, Giovanni Curti.</p>
         </div>
-        <div class="team-card">
+        <div class="team-card team-card-yellow">
           <div class="eyebrow">Team Progettazione</div>
           <p class="team-role">Progettazione e partecipazione a bandi pubblici e privati.</p>
-          <p class="team-names">Giovanni Curti.</p>
+          <p class="team-names">Marco Badini, Giovanni Curti.</p>
         </div>
       </div>
     </div>
@@ -144,11 +144,13 @@ const direttivo = [
     display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
   }
   .team-card {
-    border: 1px solid var(--border); border-radius: 24px; padding: 32px 30px; background: var(--paper);
+    border-radius: 24px; padding: 32px 30px;
   }
+  .team-card.team-card-tea { background: var(--tea-tint); }
+  .team-card.team-card-yellow { background: var(--yellow); }
   .team-card .eyebrow { margin-bottom: 14px; }
   .team-card .team-role { color: var(--gray); font-size: 0.9rem; margin: 0 0 10px; }
-  .team-card .team-names { font-size: 1rem; color: var(--ink); margin: 0; }
+  .team-card .team-names { font-size: 1rem; color: var(--ink); margin: 0; font-weight: 500; }
 
   .credits-text { font-size: 1rem; color: var(--ink); }
 
