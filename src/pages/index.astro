@@ -199,6 +199,7 @@ const newsHome = newsEntries
   }
   @media (max-width: 600px) {
     .hero {
+      position: relative;
       height: auto;
       min-height: 0;
       padding: 220px 24px 44px;
@@ -206,6 +207,19 @@ const newsHome = newsEntries
         linear-gradient(rgba(255,255,255,0.12), rgba(255,255,255,0.12)),
         url('/assets/hero-orchestra.jpg') center top / contain no-repeat;
       background-color: #ffffff;
+    }
+    .hero .eyebrow {
+      position: absolute;
+      top: 178px;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: 0;
+      background: #ffffff;
+      padding: 8px 16px;
+      border-radius: 999px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.16);
+      white-space: nowrap;
+      z-index: 1;
     }
   }
 
