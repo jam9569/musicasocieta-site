@@ -13,14 +13,86 @@
       </svg>
       <div class="wordtxt">Musica<span>Società</span></div>
     </a>
-    <nav>
-      <a href="/chi-siamo/">Chi siamo</a>
+    <nav id="site-nav">
+      <div class="nav-item has-dropdown" id="chi-siamo-item">
+        <a href="/chi-siamo/">Chi siamo</a>
+        <button
+          type="button"
+          class="dropdown-toggle"
+          id="chi-siamo-toggle"
+          aria-expanded="false"
+          aria-controls="chi-siamo-dropdown"
+          aria-label="Mostra sottomenu Chi siamo"
+        >
+          <svg class="chev" viewBox="0 0 12 8" width="10" height="7" fill="none">
+            <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+        <div class="dropdown" id="chi-siamo-dropdown">
+          <a href="/scuole-aderenti/">Scuole aderenti</a>
+          <a href="/organi-e-trasparenza/">Statuto, organi e trasparenza</a>
+        </div>
+      </div>
       <a href="/#vantaggi">Vantaggi per i soci</a>
       <a href="/#progetti-bandi">Progetti e bandi</a>
-      <a href="/organi-e-trasparenza/">Organi e Trasparenza</a>
       <a href="/news/">News</a>
       <a href="/#cta">Contatti</a>
     </nav>
     <a href="/#cta" class="btn btn-primary">Diventa socio</a>
+    <button
+      type="button"
+      class="hamburger"
+      id="hamburger-btn"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label="Apri il menu di navigazione"
+    >
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+
+<script>
+  const header = document.querySelector('header.site-header');
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const nav = document.getElementById('site-nav');
+  const dropdownItem = document.getElementById('chi-siamo-item');
+  const dropdownToggle = document.getElementById('chi-siamo-toggle');
+
+  if (header && hamburgerBtn && nav) {
+    hamburgerBtn.addEventListener('click', () => {
+      const isOpen = header.classList.toggle('nav-open');
+      hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+      if (!isOpen && dropdownItem && dropdownToggle) {
+        dropdownItem.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    nav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        header.classList.remove('nav-open');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        if (dropdownItem && dropdownToggle) {
+          dropdownItem.classList.remove('open');
+          dropdownToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  }
+
+  if (dropdownItem && dropdownToggle) {
+    dropdownToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isOpen = dropdownItem.classList.toggle('open');
+      dropdownToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!dropdownItem.contains(e.target as Node)) {
+        dropdownItem.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+</script>
