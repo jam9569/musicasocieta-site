@@ -14,6 +14,15 @@ const {
 <html lang="it">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- Iubenda Cookie Solution: banner di consenso, deve caricare il prima possibile -->
+    <script type="text/javascript" set:html={`
+      var _iub = _iub || [];
+      _iub.csConfiguration = {"siteId":4696842,"cookiePolicyId":36320291,"lang":"it"};
+    `} />
+    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/4696842.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <title>{title}</title>
@@ -217,6 +226,9 @@ const {
         display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
         font-size: 0.78rem; color: var(--gray); opacity: 0.85;
       }
+      .footer-legal-links { display: flex; gap: 14px; }
+      .footer-legal-links a { color: var(--gray); text-decoration: underline; text-underline-offset: 2px; }
+      .footer-legal-links a:hover { color: var(--tea-dark); }
 
       @media (max-width: 760px) {
         .footer-grid { grid-template-columns: 1fr; }
