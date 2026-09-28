@@ -14,6 +14,8 @@ const scuole = [
 <Layout title="Scuole Aderenti — MusicaSocietà APS" description="Le scuole e associazioni fondatrici della rete MusicaSocietà APS.">
   <Header />
 
+  <main>
+
   <section class="page-hero">
     <div class="eyebrow"><span class="dot"></span> La rete</div>
     <h1>Scuole <span class="accent">aderenti</span></h1>
@@ -26,7 +28,7 @@ const scuole = [
         {scuole.map((s) => (
           <div class="school-card">
             <div class="eyebrow">Ente fondatore</div>
-            <h3>{s.nome}</h3>
+            <h2>{s.nome}</h2>
             <p class="meta">{s.citta}</p>
             <p class="rep">Legale rappresentante: {s.rappresentante}</p>
             <a href={s.url} class="link-arrow" target="_blank" rel="noopener">Visita il sito →</a>
@@ -46,6 +48,8 @@ const scuole = [
     </div>
   </section>
 
+
+  </main>
   <Footer />
 </Layout>
 
@@ -58,7 +62,7 @@ const scuole = [
     border-radius: 24px; padding: 34px 32px; background: var(--tea-tint);
   }
   .school-card .eyebrow { margin-bottom: 12px; }
-  .school-card h3 { font-size: 1.25rem; line-height: 1.2; margin-bottom: 12px; }
+  .school-card h2 { font-size: 1.25rem; line-height: 1.2; margin-bottom: 12px; }
   .school-card .meta { color: var(--tea-dark); font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.88rem; margin: 0 0 4px; }
   .school-card .rep { color: var(--gray); font-size: 0.9rem; margin: 0 0 14px; }
   .school-card .link-arrow { color: var(--tea-dark); font-size: 0.88rem; }
