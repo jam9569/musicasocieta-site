@@ -1,0 +1,274 @@
+---
+import Layout from '../layouts/layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// Modulo di pre-iscrizione (Jotform). Quando le pre-iscrizioni si chiudono basta
+// togliere i due pulsanti che usano questo indirizzo.
+const MODULO = 'https://form.jotform.com/262732626619059';
+---
+
+<Layout title="Workshop: costruisci il sito web del tuo ente — MusicaSocietà APS" description="Workshop pratico per gli enti del Terzo Settore: impara a creare e gestire da solo il sito del tuo ente con l'Intelligenza Artificiale. Venerdì 30 ottobre 2026 a Bologna. Pre-iscrizione gratuita.">
+  <Header />
+
+  <main>
+
+  <section class="page-hero">
+    <div class="eyebrow"><span class="dot"></span> Workshop pratico · venerdì 30 ottobre 2026</div>
+    <h1>Costruisci il sito web<br><span class="accent">del tuo ente, da solo.</span></h1>
+    <p class="sub">Impara a creare e gestire autonomamente il sito del tuo ente con il supporto dell'Intelligenza Artificiale.</p>
+
+    <div class="hero-date">
+      <strong>Venerdì 30 ottobre 2026</strong>
+      <span>10:00–13:00 e 15:00–18:00 · Bologna</span>
+    </div>
+
+    <div class="hero-cta">
+      <a href={MODULO} target="_blank" rel="noopener" class="btn btn-primary">Pre-iscriviti al workshop →</a>
+      <p class="free-note"><strong>PRE-ISCRIZIONE GRATUITA – NESSUN PAGAMENTO RICHIESTO</strong><br>Il workshop sarà attivato al raggiungimento di almeno 6 partecipanti di enti non associati a MusicaSocietà APS.</p>
+    </div>
+  </section>
+
+  <section class="plain-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">A chi è rivolto</div>
+        <h2>Agli enti del Terzo Settore e ai loro operatori.</h2>
+        <p class="story-text">Il workshop è riservato agli Enti del Terzo Settore (ETS) iscritti al RUNTS: associazioni, APS, ODV, cooperative sociali, fondazioni ed enti assimilati. È pensato in particolare per le scuole di musica e le realtà associative, e per le persone che al loro interno si occupano della comunicazione e del sito.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="plain-section learn-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Cosa imparerai</div>
+        <h2>Dal dominio al sito online, fino agli aggiornamenti di ogni giorno.</h2>
+      </div>
+      <div class="learn-grid">
+        <div class="learn-card">
+          <h3>Capire dominio e strumenti</h3>
+          <p>Cosa serve davvero per avere un sito e come scegliere gli strumenti giusti, senza dipendere da nessuno.</p>
+        </div>
+        <div class="learn-card">
+          <h3>Creare il sito con l'IA</h3>
+          <p>Costruire il sito del tuo ente con il supporto dell'Intelligenza Artificiale, passo dopo passo.</p>
+        </div>
+        <div class="learn-card">
+          <h3>Pubblicarlo</h3>
+          <p>Metterlo online in pochi minuti, con il tuo indirizzo.</p>
+        </div>
+        <div class="learn-card">
+          <h3>Modificarlo in autonomia</h3>
+          <p>Aggiornare testi, immagini e pagine da solo, ogni volta che serve.</p>
+        </div>
+      </div>
+      <p class="cost-note"><strong>Meno di 40 € per costruirlo e costi di mantenimento contenuti:</strong> paghi solo il dominio e l'assistente IA.<br><span>Prezzi indicativi, verificati a settembre 2026.</span></p>
+    </div>
+  </section>
+
+  <section class="how-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Come si svolge</div>
+        <h2>Una giornata in presenza, lavorando sul tuo progetto.</h2>
+      </div>
+      <div class="how-grid">
+        <div class="how-item">
+          <h3>6 ore in presenza</h3>
+          <p>Dalle 10:00 alle 13:00 e dalle 15:00 alle 18:00, con pausa pranzo libera.</p>
+        </div>
+        <div class="how-item">
+          <h3>Si lavora a coppie</h3>
+          <p>Fino a 8 partecipanti in 4 coppie. Se le persone sono 6, si lavora in 3 coppie.</p>
+        </div>
+        <div class="how-item">
+          <h3>Esercitazione pratica</h3>
+          <p>Si lavora sul progetto del proprio ente: il formatore assiste, ma l'attività resta didattica.</p>
+        </div>
+      </div>
+      <p class="story-text how-note">Il workshop non consiste nella realizzazione del sito per conto dell'ente: l'obiettivo è che i partecipanti diventino in grado di creare il proprio sito con il supporto dell'IA, pubblicarlo e modificarlo e aggiornarlo poi in autonomia. Formatore: Marco Badini.</p>
+    </div>
+  </section>
+
+  <section class="plain-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Informazioni pratiche</div>
+        <h2>Quando, dove e con chi.</h2>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-label">Quando</div>
+          <div class="info-value">Venerdì 30 ottobre 2026</div>
+          <div class="info-sub">10:00–13:00 e 15:00–18:00</div>
+        </div>
+        <div class="info-card">
+          <div class="info-label">Dove</div>
+          <div class="info-value">Jam Session APS · Piccolo Auditorium Marco Tamburini</div>
+          <div class="info-sub">Via del Perugino 6B, Bologna</div>
+        </div>
+        <div class="info-card">
+          <div class="info-label">Organizza</div>
+          <div class="info-value">MusicaSocietà APS</div>
+          <div class="info-sub">Jam Session APS mette a disposizione gli spazi</div>
+        </div>
+        <div class="info-card">
+          <div class="info-label">Posti</div>
+          <div class="info-value">Massimo 8 partecipanti</div>
+          <div class="info-sub">Al massimo 2 posti per gli enti associati a MusicaSocietà APS. Informazioni: <a href="mailto:info@musicasocieta.it">info@musicasocieta.it</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="price-band">
+    <div class="wrap">
+      <div class="price-grid">
+        <div class="price-tile"><div class="big">70 €</div><div class="lbl">a partecipante</div></div>
+        <div class="price-tile"><div class="big">Gratis</div><div class="lbl">per gli enti associati a MusicaSocietà APS (max 2 posti)</div></div>
+        <div class="price-tile"><div class="big">Min. 6</div><div class="lbl">partecipanti di enti non associati per attivare</div></div>
+        <div class="price-tile"><div class="big">Max. 8</div><div class="lbl">posti in tutto</div></div>
+        <div class="price-tile"><div class="big">6 ore</div><div class="lbl">in presenza</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="plain-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Come funziona la pre-iscrizione</div>
+        <h2>Pre-iscriversi è gratuito e non vincola a nulla.</h2>
+        <p class="story-text">Per ora non chiediamo nessun pagamento, a nessuno, soci compresi. Il workshop sarà confermato soltanto se arriveranno almeno 6 pre-iscrizioni di enti non associati a MusicaSocietà APS entro venerdì 23 ottobre 2026. I posti sono 8 in tutto e, per gli enti associati, al massimo 2: se la richiesta sarà maggiore, ripeteremo il workshop.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="num">01</div>
+          <div><h3>Ti pre-iscrivi.</h3><p>Compili il modulo entro il 23 ottobre. È gratuito e non comporta alcun impegno.</p></div>
+        </div>
+        <div class="step">
+          <div class="num">02</div>
+          <div><h3>Arriviamo a 6 pre-iscrizioni.</h3><p>Ti scriviamo per confermare il workshop in via definitiva, spiegarti come perfezionare l'iscrizione e, per i non associati, come versare la quota di 70 €. Gli enti associati restano gratuiti anche dopo la conferma.</p></div>
+        </div>
+        <div class="step">
+          <div class="num">03</div>
+          <div><h3>Se non arriviamo a 6.</h3><p>Il workshop non viene attivato e nessun importo è dovuto a nessuno.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-band" id="pre-iscrizione">
+    <div class="wrap form-inner">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Pre-iscrizione</div>
+        <h2>Pre-iscriviti al workshop.</h2>
+        <p class="free-note"><strong>PRE-ISCRIZIONE GRATUITA – NESSUN PAGAMENTO RICHIESTO</strong><br>Il workshop sarà attivato al raggiungimento di almeno 6 partecipanti di enti non associati a MusicaSocietà APS.</p>
+        <p class="form-help">Nel modulo ti chiediamo: nome e cognome, ente di appartenenza, codice fiscale dell'ente, partita IVA (se disponibile), ruolo, e-mail, telefono e se l'ente è associato a MusicaSocietà APS. Il modulo si apre in una nuova scheda.</p>
+      </div>
+      <div class="form-action">
+        <a href={MODULO} target="_blank" rel="noopener" class="btn btn-tea">Pre-iscriviti al workshop →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="terms-section">
+    <div class="wrap">
+      <h3>Condizioni della pre-iscrizione</h3>
+      <p>La pre-iscrizione è gratuita e non vincolante: non costituisce acquisto né impegno di pagamento. La disciplina di pagamento, rinuncia e rimborso sarà comunicata solo dopo la conferma del workshop. I dati inseriti nel modulo sono trattati secondo l'<a href="https://www.iubenda.com/privacy-policy/36320291" target="_blank" rel="noopener">informativa privacy</a> di MusicaSocietà APS.</p>
+    </div>
+  </section>
+
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  section.plain-section { padding: 20px 32px 70px; }
+  .section-head { max-width: 820px; margin: 0 0 28px; }
+  .section-head .eyebrow { color: var(--gray); }
+  .section-head h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.15; }
+  .story-text { max-width: 820px; color: var(--ink); font-size: 1rem; line-height: 1.6; margin: 12px 0 0; }
+
+  /* hero */
+  .hero-date {
+    display: inline-flex; flex-direction: column; gap: 4px;
+    margin: 28px auto 0; padding: 14px 26px; border-radius: 18px;
+    background: var(--tea-tint); color: var(--ink);
+  }
+  .hero-date strong { font-family: 'Poppins', sans-serif; font-size: 1.1rem; }
+  .hero-date span { color: var(--gray); font-size: 0.9rem; }
+  .hero-cta { margin-top: 26px; }
+  .free-note { margin: 16px 0 0; font-size: 0.86rem; line-height: 1.5; color: var(--gray); }
+  .free-note strong { color: var(--tea-dark); letter-spacing: 0.02em; }
+
+  /* cosa imparerai */
+  section.learn-section { padding-top: 0; }
+  .learn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 8px; }
+  .learn-card { border-radius: 20px; padding: 26px 24px; background: var(--gray-light); }
+  .learn-card h3 { font-size: 1.02rem; line-height: 1.25; margin-bottom: 8px; }
+  .learn-card p { color: var(--gray); font-size: 0.9rem; margin: 0; }
+  .cost-note { margin: 26px 0 0; font-size: 1rem; line-height: 1.5; }
+  .cost-note strong { color: var(--tea-dark); }
+  .cost-note span { color: var(--gray); font-size: 0.82rem; }
+
+  /* come si svolge: fascia piena */
+  section.how-section { padding: 70px 32px; background: var(--tea-tint); }
+  .how-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  .how-item { background: #fff; border-radius: 20px; padding: 26px 24px; }
+  .how-item h3 { font-size: 1.02rem; margin-bottom: 8px; }
+  .how-item p { color: var(--gray); font-size: 0.9rem; margin: 0; }
+  .how-note { margin-top: 26px; }
+
+  /* informazioni pratiche */
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .info-card { border: 1px solid var(--border); border-radius: 20px; padding: 24px; }
+  .info-label {
+    font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.72rem;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray); margin-bottom: 8px;
+  }
+  .info-value { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.05rem; line-height: 1.3; }
+  .info-sub { color: var(--gray); font-size: 0.9rem; margin-top: 6px; }
+  .info-sub a { color: var(--tea-dark); text-decoration: underline; }
+
+  /* box in evidenza: fascia piena gialla, senza pulsanti */
+  section.price-band { padding: 56px 32px; background: var(--yellow); }
+  .price-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+  .price-tile { background: #fff; border-radius: 18px; padding: 22px 16px; text-align: center; }
+  .price-tile .big { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.6rem; line-height: 1.1; color: var(--yellow-dark); }
+  .price-tile .lbl { margin-top: 8px; font-size: 0.82rem; color: var(--gray); line-height: 1.35; }
+
+  /* passi */
+  .steps-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 8px; }
+  .step { display: flex; gap: 16px; align-items: flex-start; }
+  .step .num {
+    font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1rem; color: var(--tea-dark);
+    background: var(--tea-tint); border-radius: 999px; padding: 6px 12px; flex: none;
+  }
+  .step h3 { font-size: 1.02rem; margin-bottom: 6px; }
+  .step p { color: var(--gray); font-size: 0.9rem; margin: 0; }
+
+  /* fascia del modulo: verde tea → pulsante verde scuro */
+  section.form-band { padding: 70px 32px; background: var(--tea-tint); }
+  .form-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+  .form-band h2 { font-size: 1.7rem; margin-bottom: 4px; }
+  .form-band .eyebrow { color: var(--gray); }
+  .form-help { max-width: 560px; margin: 14px 0 0; color: var(--gray); font-size: 0.88rem; line-height: 1.5; }
+
+  /* condizioni */
+  section.terms-section { padding: 40px 32px 70px; }
+  .terms-section h3 { font-size: 1rem; margin-bottom: 8px; }
+  .terms-section p { max-width: 820px; color: var(--gray); font-size: 0.88rem; line-height: 1.55; margin: 0; }
+  .terms-section a { color: var(--tea-dark); text-decoration: underline; }
+
+  @media (max-width: 900px) {
+    .price-grid { grid-template-columns: 1fr 1fr 1fr; }
+    .how-grid, .steps-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 760px) {
+    .learn-grid, .info-grid { grid-template-columns: 1fr; }
+    .price-grid { grid-template-columns: 1fr 1fr; }
+    .form-inner { text-align: center; justify-content: center; }
+    .form-help { margin-left: auto; margin-right: auto; }
+  }
+</style>
