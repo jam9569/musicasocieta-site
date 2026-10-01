@@ -8,6 +8,9 @@ const news = defineCollection({
     date: z.string(),
     excerpt: z.string().optional(),
     immagine: z.string().optional(),
+    // Se presente, la scheda della news porta direttamente a questa pagina (es. la pagina di
+    // un evento) e non viene creata una pagina news intermedia.
+    href: z.string().optional(),
   }),
 });
 

@@ -16,6 +16,7 @@ function mapNews(n) {
   const d = new Date(n.data.date);
   return {
     slug: n.id,
+    href: n.data.href ?? `/news/${n.id}/`,
     title: n.data.title,
     dateDisplay: d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }),
     annoSociale: annoSociale(d),
@@ -53,7 +54,7 @@ const ANNI_SOCIALI = [...new Set(archivio.map(n => n.annoSociale))].sort((a, b) 
           <div class="section-head"><h2>Prossimamente</h2></div>
           <div class="news-grid">
             {prossime.map(n => (
-              <a class="news-card" href={`/news/${n.slug}/`}>
+              <a class="news-card" href={n.href}>
                 <span class="news-date">{n.dateDisplay}</span>
                 <span class="news-title">{n.title}</span>
                 <span class="link-arrow">Leggi i dettagli →</span>
@@ -76,7 +77,7 @@ const ANNI_SOCIALI = [...new Set(archivio.map(n => n.annoSociale))].sort((a, b) 
           )}
           <div class="news-grid" id="news-grid">
             {archivio.map(n => (
-              <a class="news-card" href={`/news/${n.slug}/`} data-year={n.annoSociale}>
+              <a class="news-card" href={n.href} data-year={n.annoSociale}>
                 <span class="news-date">{n.dateDisplay}</span>
                 <span class="news-title">{n.title}</span>
                 <span class="link-arrow">Leggi i dettagli →</span>

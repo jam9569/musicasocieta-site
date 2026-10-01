@@ -6,7 +6,8 @@ import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
   const news = await getCollection('news');
-  return news.map(entry => ({
+  // Le news con un indirizzo proprio (href) rimandano direttamente alla pagina dell'evento: niente pagina intermedia.
+  return news.filter(entry => !entry.data.href).map(entry => ({
     params: { slug: entry.id },
     props: { entry },
   }));
