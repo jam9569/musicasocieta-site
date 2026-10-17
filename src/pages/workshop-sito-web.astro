@@ -135,6 +135,27 @@ const MODULO = 'https://form.jotform.com/262732626619059';
     </div>
   </section>
 
+  <section class="plain-section challenge">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Hai già un sito?</div>
+        <h2>La sfida: il tuo sito contro il nostro.</h2>
+        <p class="story-text">Mettilo alla prova. Apri PageSpeed Insights di Google, inserisci l'indirizzo del tuo sito e guarda i quattro punteggi: Prestazioni, Accessibilità, Best practice e SEO. Poi fai la stessa prova con jamsessionaps.it, costruito con il metodo che impari al workshop. Se il nostro va meglio, al workshop ti mostriamo come arrivarci anche tu.</p>
+      </div>
+      <div class="score-grid">
+        <div class="score-tile"><div class="score">100</div><div class="lbl">Prestazioni</div></div>
+        <div class="score-tile"><div class="score">100</div><div class="lbl">Accessibilità</div></div>
+        <div class="score-tile"><div class="score">100</div><div class="lbl">Best practice</div></div>
+        <div class="score-tile"><div class="score">100</div><div class="lbl">SEO</div></div>
+      </div>
+      <p class="score-note">I punteggi di jamsessionaps.it su dispositivi mobili, test PageSpeed Insights del 17 ottobre 2026.</p>
+      <div class="challenge-cta">
+        <a href="https://pagespeed.web.dev/?hl=it" target="_blank" rel="noopener" class="btn btn-tea">Testa il tuo sito →</a>
+        <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fjamsessionaps.it%2F&hl=it" target="_blank" rel="noopener" class="btn btn-ghost">Guarda il risultato di jamsessionaps.it</a>
+      </div>
+    </div>
+  </section>
+
   <section class="plain-section">
     <div class="wrap">
       <div class="section-head">
@@ -237,6 +258,13 @@ const MODULO = 'https://form.jotform.com/262732626619059';
   .price-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
   .price-tile { background: #fff; border-radius: 18px; padding: 22px 16px; text-align: center; }
   .price-tile .big { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.6rem; line-height: 1.1; color: var(--yellow-dark); }
+  .score-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
+  .score-tile { border: 1px solid var(--border); border-radius: 18px; padding: 22px 16px; text-align: center; background: #fff; }
+  .score-tile .score { width: 76px; height: 76px; margin: 0 auto; border-radius: 50%; border: 5px solid #0cce6b; color: #0a8f4a; display: flex; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.5rem; background: #e8f9ef; }
+  .score-tile .lbl { margin-top: 10px; font-size: 0.9rem; color: var(--ink); font-weight: 500; }
+  .score-note { margin-top: 14px; font-size: 0.82rem; color: var(--gray); }
+  .challenge-cta { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 12px; }
+  @media (max-width: 720px) { .score-grid { grid-template-columns: 1fr 1fr; } }
   .price-tile .lbl { margin-top: 8px; font-size: 0.82rem; color: var(--gray); line-height: 1.35; }
 
   /* passi */
